@@ -85,4 +85,37 @@ public class IntArrayWorker {
 		}
 	}
 
+/** 
+ * Count how many times an integer is found in the matrix
+ * @return the count
+ */
+	public int getCount(int searchFor)
+	{
+		int i, j;
+		int timesFound = 0;
+		for (i = 0; i < matrix.length; i++)
+		{
+			for (j = 0; j < matrix[i].length; j++)
+			{
+				if (matrix[i][j] == searchFor)
+					timesFound++;
+			}
+		}
+		return timesFound;
+	}
+/*
+	public int getLargest ()
+	{
+		int highest = 0;
+		for(int i=0; i<matrix.length;i++)
+		{
+			for(int j=0; j<matrix[i].length;j++)
+			{
+				if (matrix[i][j] > highest)
+					highest = matrix[i][j];
+			}
+		}
+		return highest;
+	}
+*/
 }

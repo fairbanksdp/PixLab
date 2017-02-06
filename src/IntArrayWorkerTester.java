@@ -48,7 +48,6 @@ public class IntArrayWorkerTester {
 	}
 
 	/** Method to test getLargest */
-/*
 	public static void testGetLargest()
 	{ // test when largest is last
 		IntArrayWorker worker = new IntArrayWorker();
@@ -72,7 +71,7 @@ public class IntArrayWorkerTester {
 		largest = worker.getLargest();
 		System.out.println("Largest should be 6 and is " + largest);
 	}
-*/
+
 	/** Method to test getColTotal */
 	// public static void testGetColTotal()
 	// {
@@ -93,7 +92,7 @@ public class IntArrayWorkerTester {
 		testGetCount();
 		testGetTotal();
 		testGetTotalNested();
-		// testGetLargest();
+		testGetLargest();
 		// testGetColTotal();
 	}
 }

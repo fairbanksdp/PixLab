@@ -103,7 +103,10 @@ public class IntArrayWorker {
 		}
 		return timesFound;
 	}
-/*
+/**
+ * Gets the largest number in the matrix
+ * @return the largest number
+ */
 	public int getLargest ()
 	{
 		int highest = 0;
@@ -117,5 +120,4 @@ public class IntArrayWorker {
 		}
 		return highest;
 	}
-*/
 }

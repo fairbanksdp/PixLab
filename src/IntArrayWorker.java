@@ -120,4 +120,15 @@ public class IntArrayWorker {
 		}
 		return highest;
 	}
+/**
+ * Gets the total of all of the integers in a specified column
+ * @return the total in column
+ */
+	public int getColTotal(int col)
+	{
+		int total = 0;
+		for (int row=0; row<matrix.length; row++)
+			total += matrix[row][col];
+		return total;
+	}
 }

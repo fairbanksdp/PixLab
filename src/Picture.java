@@ -279,6 +279,33 @@ public class Picture extends SimplePicture {
 		System.out.println(count);
 	}
 
+	/** Mirror just part of a picture of a snow man to have 4 arms */
+	public void mirrorArms() {
+		int mirrorPoint = 190;
+		Pixel leftPixel = null;
+		Pixel rightPixel = null;
+		int count = 0;
+		Pixel[][] pixels = this.getPixels2D();
+
+		for (int col = 105; col < 170; col++) {
+			for (int row = 155; row < mirrorPoint; row++) {
+
+				leftPixel = pixels[row][col];
+				rightPixel = pixels[mirrorPoint-row+mirrorPoint][col];
+				rightPixel.setColor(leftPixel.getColor());
+			}
+		}
+		for (int col = 239; col < 293; col++) {
+			for (int row = 155; row < mirrorPoint; row++) {
+
+				leftPixel = pixels[row][col];
+				rightPixel = pixels[mirrorPoint-row+mirrorPoint][col];
+				rightPixel.setColor(leftPixel.getColor());
+			}
+		}
+
+	}
+
 	/**
 	 * copy from the passed fromPic to the specified startRow and startCol in
 	 * the current picture

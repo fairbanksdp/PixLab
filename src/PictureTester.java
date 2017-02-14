@@ -96,6 +96,14 @@ public class PictureTester
     temple.mirrorTemple();
     temple.explore();
   }
+ /** Method to test mirrorGull */
+  public static void testMirrorGull()
+  {
+    Picture temple = new Picture("seagull.jpg");
+    temple.explore();
+    temple.mirrorGull();
+    temple.explore();
+  }
   /** Method to test mirrorArms */
   public static void testMirrorArms()
   {
@@ -143,8 +151,8 @@ public class PictureTester
     //testMirrorHorizontalBotToTop();
     //testMirrorVerticalRightToLeft();
     //testMirrorTemple();
-    testMirrorArms();
-    //testMirrorGull();
+    //testMirrorArms();
+    testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();

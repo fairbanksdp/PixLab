@@ -279,6 +279,25 @@ public class Picture extends SimplePicture {
 		System.out.println(count);
 	}
 
+	/** Mirror just part of a picture of a gull */
+	public void mirrorGull() {
+		int mirrorPoint = 346;
+		Pixel leftPixel = null;
+		Pixel rightPixel = null;
+		Pixel[][] pixels = this.getPixels2D();
+
+		// loop through the rows
+		for (int row = 230; row < 323; row++) {
+			// loop from 13 to just before the mirror point
+			for (int col = 235; col < mirrorPoint; col++) {
+
+				leftPixel = pixels[row][col];
+				rightPixel = pixels[row][mirrorPoint - col + mirrorPoint];
+				rightPixel.setColor(leftPixel.getColor());
+			}
+		}
+	}
+
 	/** Mirror just part of a picture of a snow man to have 4 arms */
 	public void mirrorArms() {
 		int mirrorPoint = 190;

@@ -414,6 +414,21 @@ public class Picture extends SimplePicture {
 		this.write("collage.jpg");
 	}
 
+	/** Method to create a collage of several pictures */
+	public void myCollage() {
+		Picture flower1 = new Picture("flower1.jpg");
+		Picture flower2 = new Picture("flower2.jpg");
+		Picture koala = new Picture("koala.jpg");
+		koala.negate();
+		this.copy(koala, 0, 0);
+		this.copy(flower2, 100, 0);
+		this.copy(flower1, 200, 0);
+		this.mirrorDiagonal();
+		this.mirrorVertical();
+		this.write("myCollage.jpg");
+	}
+
+
 	/**
 	 * Method to show large changes in color
 	 * 

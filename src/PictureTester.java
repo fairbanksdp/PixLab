@@ -134,6 +134,15 @@ public class PictureTester
     swan.edgeDetection(10);
     swan.explore();
   }
+ 
+  /** Method to test edgeDetection2 */
+  public static void testEdgeDetection2()
+  {
+    Picture swan = new Picture("swan.jpg");
+    Picture canvas = new Picture("640x480.jpg");
+    canvas.edgeDetection2(swan, 10);
+    canvas.explore();
+  }
   
 	/** Method to test selectCopy */
 	public static void testSelectCopy()
@@ -174,8 +183,8 @@ public class PictureTester
     //testMyCollage();
     //testCopy();
     //testSelectCopy();
-    testEdgeDetection();
-    //testEdgeDetection2();
+    //testEdgeDetection();
+    testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);

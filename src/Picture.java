@@ -457,6 +457,72 @@ public class Picture extends SimplePicture {
 		}
 	}
 
+	/**
+	 * Method to show large changes in color
+	 * 
+	 * @param edgeDist
+	 *            the distance for finding edges
+	 * @param fromPic
+	 *            the picture to find edges in
+	 */
+	public void edgeDetection2(Picture fromPic, int edgeDist) {
+		fromPic.grayscale();
+		Pixel[][] pixels = fromPic.getPixels2D();
+		Pixel[][] toPix = this.getPixels2D();
+		Pixel[] cells = new Pixel[9];
+		double[] colors = new double[9];
+		int row, col, i;
+		for (row = 1; row < pixels.length - 1; row++) {
+			for (col = 1; col < pixels[0].length - 1; col++) {
+				cells[0] = pixels[row][col];
+				cells[1] = pixels[row-1][col-1];
+				cells[2] = pixels[row-1][col];
+				cells[3] = pixels[row-1][col+1];
+				cells[4] = pixels[row][col+1];
+				cells[5] = pixels[row+1][col+1];
+				cells[6] = pixels[row+1][col];
+				cells[7] = pixels[row+1][col-1];
+				cells[8] = pixels[row][col-1];
+				for (i = 0; i < 9; i++)
+					colors[i] = (double)cells[i].getRed(); 
+				if (stdDiv(colors) > edgeDist)
+					toPix[row][col].setColor(Color.BLACK);
+				else
+					toPix[row][col].setColor(Color.WHITE);
+			}
+		}
+	}
+
+	public double stdDiv(double[] numbers)
+	{
+  	double ave = mean(numbers);
+		double[] tempCalc = new double[numbers.length];
+		for (int i=0; i<numbers.length; i++)
+		{
+			if (numbers[i] == -1.0)
+				tempCalc[i] = -1.0;
+			else
+				tempCalc[i] = (numbers[i] - ave)*(numbers[i] - ave);
+		}
+		return mean(tempCalc);
+	}
+
+	public double mean(double[] numbers)
+	{
+		int i;
+		int diviser;
+		double total = 0.0;
+		for (i=0, diviser=0; i < numbers.length; i++)
+		{
+			if (numbers[i] != -1.0) // && numbers[i] != null)
+			{
+				total += numbers[i];
+				diviser++;
+			}
+		}
+		return total/diviser;
+	}
+
 	/*
 	 * Main method for testing - each class in Java can have a main method
 	 */

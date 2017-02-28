@@ -128,6 +128,15 @@ public class PictureTester
     swan.explore();
   }
   
+	/** Method to test selectCopy */
+	public static void testSelectCopy()
+	{
+		Picture pic = new Picture("swan.jpg");
+		Picture canvis = new Picture("640x480.jpg");
+		canvis.selectCopy(pic, 30, 30, 30, 30, 60, 60);
+		canvis.explore();
+	}
+
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -152,10 +161,11 @@ public class PictureTester
     //testMirrorVerticalRightToLeft();
     //testMirrorTemple();
     //testMirrorArms();
-    testMirrorGull();
+    //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
+    testSelectCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
